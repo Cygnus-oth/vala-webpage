@@ -35,14 +35,15 @@
         <meta name="twitter:domain" content="vala.ma"/>
         <meta name="twitter:title" property="og:title" itemprop="name" content="Vala.ma - " />
         <meta name="twitter:description" property="og:description" itemprop="description" content="Vala.ma | " />
-                <link rel="icon" type="image/png" href="https://www.vala.ma/themes/vala/assets/img/favicon.png">
+        <link rel="icon" type="image/png" href="https://www.vala.ma/themes/vala/assets/img/favicon.png">
         <script src="https://cdn.jsdelivr.net/npm/@shinsenter/defer.js@3.6.0/dist/defer.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet" media="print" onload="this.media = 'all'">      
 
        <link rel="stylesheet" href="https://www.vala.ma/themes/vala/assets/css/style.css?v=28022025-1" media="all">
         
      <link rel="canonical" href="https://www.vala.ma/draft-page-seo-n-3" />
-        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
         
         
         
@@ -2427,7 +2428,7 @@ owa_cmds.push(['trackClicks']);
     }
 
     .buy__plan {
-      margin-top: auto;
+      margin-top: 100%;
       width: 100%;
       text-align: center;
     }
@@ -3193,7 +3194,7 @@ owa_cmds.push(['trackClicks']);
 
       <div class="col-xl-6 col-lg-6 col-md-10 col-sm-10 mb-5 mb-lg-0">
         <div class="rts-hosting-feature__image sal-animate" data-sal="slide-left" data-sal-delay="600" data-sal-duration="800">
-          <img src="https://www.vala.ma/themes/vala/assets/images/seo/seo-1.png" alt="hosting feature">
+          <img src="assets\1.png" alt="hosting feature">
         </div>
       </div>
 
@@ -3205,8 +3206,6 @@ owa_cmds.push(['trackClicks']);
 
 <!--  SEO - Pricing -->
 <style>
-  /* Custom styles for the pricing cards to match the images */
-  /* Note: General body styles like background-color, font-family, etc., are assumed to be handled by your main page. */
 
   .pricing-card-container {
     max-width: 1200px;
@@ -3219,7 +3218,7 @@ owa_cmds.push(['trackClicks']);
     /* Add padding around the cards */
     display: flex;
     /* Use flexbox for horizontal layout */
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     /* Prevent cards from wrapping to the next line initially */
     overflow-x: auto;
     /* Enable horizontal scrolling if cards overflow */
@@ -3245,16 +3244,13 @@ owa_cmds.push(['trackClicks']);
     flex-shrink: 0;
     /* Prevent cards from shrinking */
     width: 350px;
-    /* Increased base width for each card */
     border: 1px solid #e5e7eb;
     /* Added a subtle border to define the card area */
     transition: all 0.3s ease;
-    /* Add transition for hover effects */
   }
 
   @media (min-width: 768px) {
 
-    /* md breakpoint */
     .pricing-card-container {
       flex-wrap: wrap;
       /* Allow wrapping on medium screens */
@@ -3278,7 +3274,7 @@ owa_cmds.push(['trackClicks']);
   }
 
   .plan-card.premium {
-    background-image: linear-gradient(to bottom right, #4F71FF, #3715f7);
+    background-image: linear-gradient(to bottom right, #0948b3, #3017be);
     color: white;
     border: none;
     /* Premium card does not need a border due to gradient */
@@ -3321,7 +3317,6 @@ owa_cmds.push(['trackClicks']);
     align-items: center;
     margin-bottom: 20px;
     transition: background-color 0.3s ease;
-    /* Transition for icon background */
   }
 
   .plan-card.basic .plan-icon {
@@ -3443,26 +3438,19 @@ owa_cmds.push(['trackClicks']);
 
   .buy__plan {
     background-color: #2563eb;
-    /* blue-600 */
     color: white;
     font-weight: 600;
-    /* font-semibold */
     padding: 12px 24px;
     border-radius: 8px;
     transition: background-color 0.3s ease, color 0.3s ease;
-    /* Add color transition */
     text-align: center;
     margin-top: auto;
-    /* Pushes button to the bottom */
     border: none;
-    /* Removed border */
     outline: none;
-    /* Removed outline on focus */
   }
 
   .buy__plan:hover {
     background-color: #1d4ed8;
-    /* blue-700 */
   }
 
   .plan-card.premium .buy__plan {
@@ -3477,9 +3465,7 @@ owa_cmds.push(['trackClicks']);
   /* Button color on hover of the entire card */
   .plan-card:hover .buy__plan {
     background-color: white;
-    /* Button background to white on hover */
     color: #2563eb;
-    /* Button text to blue on hover */
   }
 
   /* Ensure premium card button retains its blue text when its card is hovered */
@@ -3487,7 +3473,6 @@ owa_cmds.push(['trackClicks']);
     background-color: #f0f4f8;
     /* Maintain light background for premium button on hover */
     color: #4F71FF;
-    /* Maintain blue text for premium button on hover */
   }
 
 
@@ -3495,9 +3480,7 @@ owa_cmds.push(['trackClicks']);
   .toggle-switch-wrapper {
     display: flex;
     justify-content: center;
-    /* Center the toggle switch */
     width: 100%;
-    /* Ensure it takes full width to allow centering */
   }
 
   .toggle-switch-container {
@@ -3506,9 +3489,7 @@ owa_cmds.push(['trackClicks']);
     background-color: #f0f4f8;
     /* Light background for the overall switch container */
     border-radius: 9999px;
-    /* Fully rounded */
     padding: 2px;
-    /* Slightly reduced padding */
     position: relative;
     width: 180px;
   }
@@ -3530,7 +3511,6 @@ owa_cmds.push(['trackClicks']);
     background-color: transparent; /* Default background */
     font-size: 0.9rem;
     border: none !important;
-    outline: none; /* <--- ADD THIS LINE */
   }
 
   .toggle-button.active {
@@ -3600,84 +3580,91 @@ owa_cmds.push(['trackClicks']);
       </svg>
     </div>
     <h4 class="plan-title">Pack Basique</h4>
-    <p class="description">Petits sites vitrines ou projets personnels</p>
+    <p class="description">Petits sites vitrines/presontation ou projets personnels</p>
     <div class="border-separator"></div>
     <div class="plan-feature">
       <ul class="plan-feature__list">
         <li>
           <span class="icon-svg check">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </span> Recherche de Mots Clés
         </li>
         <li>
           <span class="icon-svg check">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </span> Audit SEO Détaillé
         </li>
         <li>
           <span class="icon-svg check">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </span> Suivi de 5 Mots Clés
         </li>
         <li>
           <span class="icon-svg check">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </span> Configuration de GA4 & GSC (Analytics)
         </li>
         <li>
           <span class="icon-svg check">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </span> Configuration des Fichiers Sitemap/Robots
         </li>
         <li>
           <span class="icon-svg check">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </span> Amélioration des Performances/Sécurité
         </li>
         <li>
           <span class="icon-svg check">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </span> Vérification et Correction des Erreurs
         </li>
         <li>
           <span class="icon-svg check">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </span> Amélioration de la Structure du Site
         </li>
         <li>
           <span class="icon-svg check">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </span> Rédaction de 2 Pages/Blogs par Mois (600 Mots Chacun)
         </li>
         <li>
           <span class="icon-svg check">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span> Création de 2 Backlinks par Mois (DA 10/40)
+        </li>
+        <li>
+          <span class="icon-svg check">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </span> Création et Suivi Continu du Contenu et du Netlinking
         </li>
         <li>
           <span class="icon-svg check">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </span> Rapport SEO Mensuel
         </li>
@@ -3696,225 +3683,226 @@ owa_cmds.push(['trackClicks']);
   </div>
 
   <!-- Standard Plan Card -->
-  <div class="plan-card premium">
+    <div class="plan-card premium ">
+        <div class="plan-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 1.5C8.96 1.5 6.47 4.02 6.47 7.05L6.47 11.39C6.47 11.95 6.27 12.48 5.91 12.91L2.83 16.59C2.47 17.02 2.29 17.58 2.29 18.15V21C2.29 21.83 2.96 22.5 3.79 22.5H20.21C21.04 22.5 21.71 21.83 21.71 21V18.15C21.71 17.58 21.53 17.02 21.17 16.59L18.09 12.91C17.73 12.48 17.53 11.95 17.53 11.39L17.53 7.05C17.53 4.02 15.04 1.5 12 1.5ZM12 3.5C14.07 3.5 15.71 5.14 15.71 7.21L15.71 11.39C15.71 12.22 16.03 12.97 16.59 13.56L19.67 17.24C19.85 17.47 19.95 17.76 19.95 18.06V20.5H4.05V18.06C4.05 17.76 4.15 17.47 4.33 17.24L7.41 13.56C7.97 12.97 8.29 12.22 8.29 11.39L8.29 7.21C8.29 5.14 9.93 3.5 12 3.5ZM12 9.5C10.74 9.5 9.71 10.53 9.71 11.79C9.71 13.06 10.74 14.09 12 14.09C13.26 14.09 14.29 13.06 14.29 11.79C14.29 10.53 13.26 9.5 12 9.5Z"
+            fill="white" />
+        </svg>
+        </div>
+        <h4 class="plan-title">Pack Standard</h4>
+        <p class="description">Petites ou Moyennes entreprises ou sites avec un blog actif</p>
+        <div class="border-separator"></div>
+        <div class="plan-feature">
+        <ul class="plan-feature__list">
+            <li>
+            <span class="icon-svg check">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </span> Recherche de Mots Clés
+            </li>
+            <li>
+            <span class="icon-svg check">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </span> Audit SEO Détaillé
+            </li>
+            <li>
+            <span class="icon-svg check">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </span> Suivi de 10 Mots Clés
+            </li>
+            <li>
+            <span class="icon-svg check">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </span> Configuration de GA4 & GSC (Analytics)
+            </li>
+            <li>
+            <span class="icon-svg check">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </span> Configuration des Fichiers Sitemap/Robots
+            </li>
+            <li>
+            <span class="icon-svg check">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </span> Amélioration des Performances/Sécurité
+            </li>
+            <li>
+            <span class="icon-svg check">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </span> Vérification et Correction des Erreurs
+            </li>
+            <li>
+            <span class="icon-svg check">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </span> Amélioration de la Structure du Site
+            </li>
+            <li>
+            <span class="icon-svg check">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </span> Rédaction de 4 Pages/Blogs par Mois (600 Mots Chacun)
+            </li>
+            <li>
+            <span class="icon-svg check">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </span> Création de 4 Backlinks par Mois (DA 10/40)
+            </li>
+            <li>
+            <span class="icon-svg check">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </span>Création et Suivi Continu du Contenu et du Netlinking
+            </li>
+            <li>
+            <span class="icon-svg check">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </span> Rapport SEO Mensuel
+            </li>
+            <li>
+            <span class="icon-svg check">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </span> Conseils & Support
+            </li>
+        </ul>
+        </div>
+        <br>
+        <button class="buy__plan" id="standardPriceBtn">Price: 2800 DHS/Mois (HT) &rarr;</button>
+    </div>
+
+    <!-- Premium Card -->
+    <div class="plan-card cloud-startup">
     <div class="plan-icon">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 1.5C8.96 1.5 6.47 4.02 6.47 7.05L6.47 11.39C6.47 11.95 6.27 12.48 5.91 12.91L2.83 16.59C2.47 17.02 2.29 17.58 2.29 18.15V21C2.29 21.83 2.96 22.5 3.79 22.5H20.21C21.04 22.5 21.71 21.83 21.71 21V18.15C21.71 17.58 21.53 17.02 21.17 16.59L18.09 12.91C17.73 12.48 17.53 11.95 17.53 11.39L17.53 7.05C17.53 4.02 15.04 1.5 12 1.5ZM12 3.5C14.07 3.5 15.71 5.14 15.71 7.21L15.71 11.39C15.71 12.22 16.03 12.97 16.59 13.56L19.67 17.24C19.85 17.47 19.95 17.76 19.95 18.06V20.5H4.05V18.06C4.05 17.76 4.15 17.47 4.33 17.24L7.41 13.56C7.97 12.97 8.29 12.22 8.29 11.39L8.29 7.21C8.29 5.14 9.93 3.5 12 3.5ZM12 9.5C10.74 9.5 9.71 10.53 9.71 11.79C9.71 13.06 10.74 14.09 12 14.09C13.26 14.09 14.29 13.06 14.29 11.79C14.29 10.53 13.26 9.5 12 9.5Z"
-          fill="white" />
-      </svg>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 0L2 10L12 24L22 10L12 0Z" fill="#569BEB" />
+        <path d="M12 0L2 10L12 10L22 10L12 0Z" fill="#2563eb" opacity="0.4" />
+    </svg>
     </div>
-    <h4 class="plan-title">Pack Standard</h4>
-    <p class="description">Petites ou Moyennes entreprises ou sites avec un blog actif</p>
-    <div class="border-separator"></div>
-    <div class="plan-feature">
-      <ul class="plan-feature__list">
-        <li>
-          <span class="icon-svg check">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </span> Recherche de Mots Clés
-        </li>
-        <li>
-          <span class="icon-svg check">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </span> Audit SEO Détaillé
-        </li>
-        <li>
-          <span class="icon-svg check">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </span> Suivi de 10 Mots Clés
-        </li>
-        <li>
-          <span class="icon-svg check">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </span> Configuration de GA4 & GSC (Analytics)
-        </li>
-        <li>
-          <span class="icon-svg check">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </span> Configuration des Fichiers Sitemap/Robots
-        </li>
-        <li>
-          <span class="icon-svg check">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </span> Amélioration des Performances/Sécurité
-        </li>
-        <li>
-          <span class="icon-svg check">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </span> Vérification et Correction des Erreurs
-        </li>
-        <li>
-          <span class="icon-svg check">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </span> Amélioration de la Structure du Site
-        </li>
-        <li>
-          <span class="icon-svg check">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </span> Rédaction de 4 Pages/Blogs par Mois (600 Mots Chacun)
-        </li>
-        <li>
-          <span class="icon-svg check">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </span> Création de 4 Backlinks par Mois (DA 10/40)
-        </li>
-        <li>
-          <span class="icon-svg check">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </span>Création et Suivi Continu du Contenu et du Netlinking
-        </li>
-        <li>
-          <span class="icon-svg check">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </span> Rapport SEO Mensuel
-        </li>
-        <li>
-          <span class="icon-svg check">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </span> Conseils & Support
-        </li>
-      </ul>
+        <h4 class="plan-title">Pack Premium</h4>
+        <p class="description">E-commerces, sites à fort trafic ou en concurrence élevée</p>
+        <div class="border-separator"></div>
+        <div class="plan-feature">
+        <ul class="plan-feature__list">
+            <li>
+            <span class="icon-svg check">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </span> Recherche de Mots Clés
+            </li>
+            <li>
+            <span class="icon-svg check">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </span> Audit SEO Détaillé
+            </li>
+            <li>
+            <span class="icon-svg check">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </span> Suivi de 20 Mots Clés
+            </li>
+            <li>
+            <span class="icon-svg check">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </span> Configuration de GA4 & GSC (Analytics)
+            </li>
+            <li>
+            <span class="icon-svg check">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </span> Configuration des Fichiers Sitemap/Robots
+            </li>
+            <li>
+            <span class="icon-svg check">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </span> Amélioration des Performances/Sécurité
+            </li>
+            <li>
+            <span class="icon-svg check">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </span> Vérification et Correction des Erreurs
+            </li>
+            <li>
+            <span class="icon-svg check">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </span> Amélioration de la Structure du Site
+            </li>
+            <li>
+            <span class="icon-svg check">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </span> Rédaction de 8 Pages/Blogs par Mois (600 Mots Chacun)
+            </li>
+            <li>
+            <span class="icon-svg check">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </span>Création de 6 Backlinks par Mois (DA 10/40)
+            </li>
+            <li>
+            <span class="icon-svg check">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </span>Création et Suivi Continu du Contenu et du Netlinking
+            </li>
+            <li>
+            <span class="icon-svg check">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </span>Rapport SEO Mensuel
+            </li>
+            <li>
+            <span class="icon-svg check">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#29a645" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </span>Conseils & Support
+            </li>
+        </ul>
+        </div>
+        <br>
+        <button class="buy__plan" id="premiumPriceBtn">Price: 5000 DHS/Mois (HT) &rarr;</button>
     </div>
-    <br>
-    <button class="buy__plan" id="standardPriceBtn">Price: 2800 DHS/Mois (HT) &rarr;</button>
-  </div>
 
-  <!-- Premium Card -->
-  <div class="plan-card cloud-startup">
-<div class="plan-icon">
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 0L2 10L12 24L22 10L12 0Z" fill="#569BEB" />
-    <path d="M12 0L2 10L12 10L22 10L12 0Z" fill="#2563eb" opacity="0.4" />
-  </svg>
-</div>
-    <h4 class="plan-title">Pack Premium</h4>
-    <p class="description">E-commerces, sites à fort trafic ou en concurrence élevée</p>
-    <div class="border-separator"></div>
-    <div class="plan-feature">
-      <ul class="plan-feature__list">
-        <li>
-          <span class="icon-svg check">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </span> Recherche de Mots Clés
-        </li>
-        <li>
-          <span class="icon-svg check">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </span> Audit SEO Détaillé
-        </li>
-        <li>
-          <span class="icon-svg check">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </span> Suivi de 20 Mots Clés
-        </li>
-        <li>
-          <span class="icon-svg check">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </span> Configuration de GA4 & GSC (Analytics)
-        </li>
-        <li>
-          <span class="icon-svg check">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </span> Configuration des Fichiers Sitemap/Robots
-        </li>
-        <li>
-          <span class="icon-svg check">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </span> Amélioration des Performances/Sécurité
-        </li>
-        <li>
-          <span class="icon-svg check">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </span> Vérification et Correction des Erreurs
-        </li>
-        <li>
-          <span class="icon-svg check">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </span> Amélioration de la Structure du Site
-        </li>
-        <li>
-          <span class="icon-svg check">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </span> Rédaction de 8 Pages/Blogs par Mois (600 Mots Chacun)
-        </li>
-        <li>
-          <span class="icon-svg check">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </span>Création de 6 Backlinks par Mois (DA 10/40)
-        </li>
-        <li>
-          <span class="icon-svg check">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </span>Création et Suivi Continu du Contenu et du Netlinking
-        </li>
-        <li>
-          <span class="icon-svg check">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </span>Rapport SEO Mensuel
-        </li>
-        <li>
-          <span class="icon-svg check">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9.5L7.5 12.5L13.5 6.5" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </span>Conseils & Support
-        </li>
-      </ul>
     </div>
-    <button class="buy__plan" id="premiumPriceBtn">Price: 5000 DHS/Mois (HT) &rarr;</button>
-  </div>
-
-</div>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
@@ -4084,18 +4072,567 @@ monthlyBtn.addEventListener('click', () => {
 
 <!-- Nos interventions end -->
 
+<style>
+
+        .testimonial-card {
+            padding: 30px 40px; /* Reduced vertical padding (top/bottom) to 30px, kept horizontal at 40px */
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-sizing: border-box;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .testimonial-card.blue-gradient {
+            background: linear-gradient(135deg, #1c63d4, #0948b3);
+            color: #fff;
+        }
+
+        .testimonial-card.blue-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M0 0h100v100H0z" fill="none"/%3E%3Ccircle cx="10" cy="10" r="2" fill="%23ffffff" fill-opacity="0.1"/%3E%3Ccircle cx="30" cy="25" r="2" fill="%23ffffff" fill-opacity="0.1"/%3E%3Ccircle cx="50" cy="40" r="2" fill="%23ffffff" fill-opacity="0.1"/%3E%3Ccircle cx="70" cy="55" r="2" fill="%23ffffff" fill-opacity="0.1"/%3E%3Ccircle cx="90" cy="70" r="2" fill="%23ffffff" fill-opacity="0.1"/%3E%3Ccircle cx="15" cy="45" r="2" fill="%23ffffff" fill-opacity="0.1"/%3E%3Ccircle cx="35" cy="60" r="2" fill="%23ffffff" fill-opacity="0.1"/%3E%3Ccircle cx="55" cy="75" r="2" fill="%23ffffff" fill-opacity="0.1"/%3E%3Ccircle cx="75" cy="90" r="2" fill="%23ffffff" fill-opacity="0.1"/%3E%3Ccircle cx="5" cy="80" r="2" fill="%23ffffff" fill-opacity="0.1"/%3E%3C/svg%3E');
+            background-repeat: repeat;
+            opacity: 0.8;
+            pointer-events: none;
+        }
+
+        .testimonial-card.light-bg {
+            background-color: #fff;
+            color: #333;
+        }
+
+        .quote-icon {
+            font-size: 3.5em;
+            line-height: 1;
+            margin-bottom: 15px; /* Reduced margin */
+            font-weight: 600;
+            opacity: 0.2;
+        }
+
+        .testimonial-text {
+            font-size: 0.95em;
+            line-height: 1.6; /* Slightly reduced line height for compactness */
+            margin-bottom: 20px; /* Reduced margin */
+        }
+
+        .testimonial-card img {
+            width: 80px; /* Way smaller image */
+            height: 80px; /* Way smaller image */
+            border-radius: 100px;
+            margin-right: 10px; /* Adjusted margin for tiny image */
+            border: none
+        }
+
+        .testimonial-card.light-bg .author-info img {
+            border: 1px solid rgba(0, 0, 0, 0.1); /* Thinner border for light card */
+        }
+
+        .author-details strong {
+            font-size: 0.9em; /* Adjusted name size for smaller context */
+        }
+
+        .author-details span {
+            font-size: 0.75em; /* Adjusted title size for smaller context */
+        }
+
+        /* Adjustments for smaller screens */
+        @media (max-width: 767.98px) {
+            .testimonial-card {
+                padding: 25px 30px; /* Adjusted padding for mobile to keep it reasonable */
+            }
+            .quote-icon {
+                font-size: 3em;
+                margin-bottom: 10px;
+            }
+            .testimonial-text {
+                font-size: 0.9em; /* Slightly smaller on mobile to fit better */
+                line-height: 1.5;
+                margin-bottom: 15px;
+            }
+            .author-info img {
+                width: 30px; /* Slightly larger on mobile for better visibility */
+                height: 30px;
+                margin-right: 10px;
+            }
+            .author-details strong {
+                font-size: 1em;
+            }
+            .author-details span {
+                font-size: 0.8em;
+            }
+        }
+    </style>
+
+    <div class="container py-3">
+        <div class="row justify-content-center g-4">
+
+            <div class="col-12 col-md-6 col-lg-4 d-flex">
+                <div class="testimonial-card light-bg">
+                    <div class="quote-icon">“</div>
+                    <p class="testimonial-text">
+                        Nous avons constaté une nette amélioration du nombre de consultations. Merci pour votre travail rigoureux.
+                    </p>
+                    <div class="d-flex align-items-center mt-auto">
+                        <img src="assets/tofinox.jpg" alt="tofinox">
+                        <div>
+                            <strong>Mohammed NAAMANE</strong>
+                            <span class="d-block">Chef de Projet</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4 d-flex">
+                <div class="testimonial-card blue-gradient">
+                    <div class="quote-icon">“</div>
+                    <p class="testimonial-text">
+                        Très heureux d'avoir collaboré avec l'équipe VALA. Ils ont fait preuve de professionnalisme,
+                        de sérieux et ont été attentifs à nos challenges pour toute la mise en œuvre du projet.
+                        Je leur souhaite beaucoup de réussite et je ne manquerai pas de faire appel à eux pour
+                        nos futurs projets digitaux.
+                    </p>
+                    <div class="d-flex align-items-center mt-auto">
+                        <img src="assets/spmmaroc.jpg" alt="Zayed Khan">
+                        <div>
+                            <strong>Mehdi</strong>
+                            <span class="d-block">Directeur Général</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4 d-flex">
+                <div class="testimonial-card light-bg">
+                    <div class="quote-icon">“</div>
+                    <p class="testimonial-text">
+                        Nous sommes très satisfaits du service SEO de l'équipe.
+                        Grâce à leur accompagnement, nous avons reçu de nombreuses
+                        demandes et consultations, ce qui a significativement amélioré
+                        notre chiffre d'affaires. Nous recommandons vivement leur expertise.
+                    </p>
+                    <div class="d-flex align-items-center mt-auto">
+                        <img src="assets/iqualaboratory.jpg" alt="Rubel Hossen">
+                        <div>
+                            <strong>Youness AALIOUA</strong>
+                            <span class="d-block">Directeur Général</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<!--Steps START -->
+ <style>
+        :root {
+            --primary-blue: #0166b9; 
+            --darker-blue: #054f99; 
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f0f2f5;
+        }
+
+        .process-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            max-width: 1200px;
+            margin: 40px auto;
+            overflow: hidden;
+        }
+
+        .process-navigation {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .nav-item-custom {
+            flex: 1;
+            text-align: center;
+            padding: 20px 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #6c757d;
+            font-weight: 600;
+        }
+
+        .nav-item-custom i {
+            font-size: 28px;
+            margin-bottom: 8px;
+            color: #92e6c1; 
+            transition: color 0.3s ease;
+        }
+
+        /* Active state for navigation item */
+        .nav-item-custom.active {
+            background-color: var(--primary-blue);
+            color: #fff;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        .nav-item-custom.active i {
+            color: #fff; /* White icon for active tab */
+        }
+
+        /* Specific colors for inactive icons (maintained for visual distinction as per original design) */
+        .process-navigation .nav-item-custom:nth-child(1) i { color: #f29a43; }
+        .process-navigation .nav-item-custom:nth-child(2) i { color: #1be48d; }
+        .process-navigation .nav-item-custom:nth-child(3) i { color: #f29a43; }
+        .process-navigation .nav-item-custom:nth-child(4) i { color: #5d6863; }
+        .process-navigation .nav-item-custom:nth-child(5) i { color: #c492ed; }
+        .process-navigation .nav-item-custom:nth-child(6) i { color: #8fd0f5; }
 
 
+        .step-card {
+            width: 250px;
+            height: 250px;
+            background-color: var(--primary-blue);
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 8px 25px rgba(33, 150, 243, 0.3); /* Adjusted shadow color */
+            color: #fff;
+            font-size: 55px;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1.2;
+            flex-shrink: 0;
+        }
 
+        .step-number {
+            padding: 20px;
+        }
 
+        .step-number br {
+            display: block;
+        }
 
+        .info-item i {
+            font-size: 36px;
+            color: var(--primary-blue); 
+            flex-shrink: 0;
+            padding-top: 5px;
+            padding-right: 10px;
+        }
+
+        .contact-button {
+            background-color: var(--primary-blue);
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-transform: uppercase;
+        }
+
+        .contact-button:hover {
+            background-color: var(--darker-blue);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive adjustments for navigation */
+        @media (max-width: 768px) {
+            .process-navigation {
+                flex-wrap: wrap;
+            }
+            .nav-item-custom {
+                flex-basis: 33.33%; /* 3 items per row */
+                padding: 15px 5px;
+            }
+            .nav-item-custom span {
+                font-size: 14px;
+            }
+            .nav-item-custom i {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .nav-item-custom {
+                flex-basis: 50%; /* 2 items per row */
+            }
+            .nav-item-custom span {
+                font-size: 12px;
+            }
+            .nav-item-custom i {
+                font-size: 20px;
+            }
+
+            .step-card {
+                width: 180px;
+                height: 180px;
+                font-size: 40px;
+            }
+            .contact-button {
+                width: 100%;
+            }
+        }
+    </style>
+    <div class="process-container">
+        <div class="process-navigation d-flex justify-content-around" id="processNav">
+            <div class="nav-item-custom active" data-target="step1-content">
+                <i class="fas fa-search"></i>
+                <span>Définition des Objectifs</span>
+            </div>
+            <div class="nav-item-custom" data-target="step2-content">
+                <i class="fas fa-money-bill-wave"></i>
+                <span>Audit SEO</span>
+            </div>
+            <div class="nav-item-custom" data-target="step3-content">
+                <i class="fas fa-chart-line"></i>
+                <span>Stratégie & Planification</span>
+            </div>
+            <div class="nav-item-custom" data-target="step4-content">
+                <i class="fas fa-cogs"></i>
+                <span>Optimisation Technique</span>
+            </div>
+            <div class="nav-item-custom" data-target="step5-content">
+                <i class="fas fa-link"></i>
+                <span>Contenu & Netlinking</span>
+            </div>
+            <div class="nav-item-custom" data-target="step6-content">
+                <i class="fas fa-chart-bar"></i>
+                <span>Suivi & Reporting</span>
+            </div>
+        </div>
+
+        <div id="step-contents-container">
+            <div id="step1-content" class="process-step-content row g-4 p-4 align-items-start">
+                <div class="col-12 col-lg-auto d-flex justify-content-center">
+                    <div class="step-card">
+                        <div class="step-number">
+                            Étape <br> 01
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg">
+                    <h2 class="text-dark fs-3 fw-bold text-uppercase mt-0 mb-3">DÉFINITION DES OBJECTIFS</h2>
+                    <p class="text-secondary fs-6 lh-base mb-4">Pour un projet SEO, une réunion initiale avec le client afin de définir ses attentes et les objectifs est cruciale avant son lancement. Cette étape permet de présenter au client les interventions générales réalisées sur les sites web pour améliorer leur référencement et le temps généralement nécessaire pour atteindre les résultats escomptés. Et par conséquent, d'avoir une vision plus ou moins générale du retour du référencement naturel (SEO).</p>
+                    <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
+                        <div class="col">
+                            <div class="info-item d-flex align-items-start gap-3">
+                                <i class="fas fa-hand-holding-usd"></i>
+                                <p class="text-secondary mb-0">L'avantage majeur du SEO est de générer un trafic qualifié, c'est-à-dire des visiteurs ayant une forte probabilité de conversion</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="info-item d-flex align-items-start gap-3">
+                                <i class="fas fa-hourglass-half"></i>
+                                <p class="text-secondary mb-0">En moyenne, il faut compter entre 3 et 6 mois pour observer les premiers résultats significatifs.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="contact-button">Contact</button>
+                </div>
+            </div>
+
+            <div id="step2-content" class="process-step-content row g-4 p-4 align-items-start d-none">
+                <div class="col-12 col-lg-auto d-flex justify-content-center">
+                    <div class="step-card">
+                        <div class="step-number">
+                            Étape <br> 02
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg">
+                    <h2 class="text-dark fs-3 fw-bold text-uppercase mt-0 mb-3">AUDIT SEO</h2>
+                    <p class="text-secondary fs-6 lh-base mb-4">L'audit SEO est une analyse complète de votre site web pour identifier les points forts et les faiblesses
+                       qui affectent son classement dans les moteurs de recherche. Il couvre les aspects techniques, le contenu et l'autorité de domaine,
+                        fournissant une feuille de route pour les optimisations futures.</p>
+                    <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
+                        <div class="col">
+                            <div class="info-item d-flex align-items-start gap-3">
+                                <i class="fas fa-clipboard-list"></i>
+                                <p class="text-secondary mb-0">Analyse approfondie de la structure technique, du contenu et des backlinks pour un aperçu complet.</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="info-item d-flex align-items-start gap-3">
+                                <i class="fas fa-lightbulb"></i>
+                                <p class="text-secondary mb-0">Identification des opportunités d'amélioration et des problèmes à résoudre pour booster votre SEO.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="contact-button">Contact</button>
+                </div>
+            </div>
+
+            <div id="step3-content" class="process-step-content row g-4 p-4 align-items-start d-none">
+                <div class="col-12 col-lg-auto d-flex justify-content-center">
+                    <div class="step-card">
+                        <div class="step-number">
+                            Étape <br> 03
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg">
+                    <h2 class="text-dark fs-3 fw-bold text-uppercase mt-0 mb-3">STRATÉGIE & PLANIFICATION</h2>
+                    <p class="text-secondary fs-6 lh-base mb-4">Basée sur l'audit, cette étape consiste à élaborer une stratégie SEO personnalisée, incluant la sélection des mots-clés, la planification du contenu et la définition des actions à entreprendre pour atteindre les objectifs fixés.</p>
+                    <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
+                        <div class="col">
+                            <div class="info-item d-flex align-items-start gap-3">
+                                <i class="fas fa-map-marked-alt"></i>
+                                <p class="text-secondary mb-0">Création d'une feuille de route claire avec les actions SEO prioritaires et leurs échéances.</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="info-item d-flex align-items-start gap-3">
+                                <i class="fas fa-bullseye"></i>
+                                <p class="text-secondary mb-0">Alignement de la stratégie SEO avec vos objectifs commerciaux globaux pour un impact maximal.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="contact-button">Contact</button>
+                </div>
+            </div>
+
+            <div id="step4-content" class="process-step-content row g-4 p-4 align-items-start d-none">
+                <div class="col-12 col-lg-auto d-flex justify-content-center">
+                    <div class="step-card">
+                        <div class="step-number">
+                            Étape <br> 04
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg">
+                    <h2 class="text-dark fs-3 fw-bold text-uppercase mt-0 mb-3">OPTIMISATION TECHNIQUE</h2>
+                    <p class="text-secondary fs-6 lh-base mb-4">L'optimisation technique vise à améliorer la structure et les performances de votre site web pour les moteurs de recherche. Cela inclut la vitesse de chargement, l'indexabilité, la convivialité mobile et la gestion des erreurs.</p>
+                    <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
+                        <div class="col">
+                            <div class="info-item d-flex align-items-start gap-3">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <p class="text-secondary mb-0">Amélioration de la vitesse du site et de l'expérience utilisateur pour un meilleur classement.</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="info-item d-flex align-items-start gap-3">
+                                <i class="fas fa-mobile-alt"></i>
+                                <p class="text-secondary mb-0">Optimisation pour les appareils mobiles, essentielle pour le référencement moderne.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="contact-button">Contact</button>
+                </div>
+            </div>
+
+            <div id="step5-content" class="process-step-content row g-4 p-4 align-items-start d-none">
+                <div class="col-12 col-lg-auto d-flex justify-content-center">
+                    <div class="step-card">
+                        <div class="step-number">
+                            Étape <br> 05
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg">
+                    <h2 class="text-dark fs-3 fw-bold text-uppercase mt-0 mb-3">CONTENU & NETLINKING</h2>
+                    <p class="text-secondary fs-6 lh-base mb-4">Cette phase se concentre sur la création de contenu de qualité et l'acquisition de backlinks pertinents.
+                       Un contenu riche et des liens externes de confiance sont cruciaux pour l'autorité de votre site et son positionnement.</p>
+                    <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
+                        <div class="col">
+                            <div class="info-item d-flex align-items-start gap-3">
+                                <i class="fas fa-pencil-alt"></i>
+                                <p class="text-secondary mb-0">Développement de contenu optimisé pour les mots-clés ciblés et l'engagement des utilisateurs.</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="info-item d-flex align-items-start gap-3">
+                                <i class="fas fa-globe"></i>
+                                <p class="text-secondary mb-0">Stratégies d'acquisition de liens de haute qualité pour renforcer l'autorité de votre domaine.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="contact-button">Contact</button>
+                </div>
+            </div>
+
+            <div id="step6-content" class="process-step-content row g-4 p-4 align-items-start d-none">
+                <div class="col-12 col-lg-auto d-flex justify-content-center">
+                    <div class="step-card">
+                        <div class="step-number">
+                            Étape <br> 06
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg">
+                    <h2 class="text-dark fs-3 fw-bold text-uppercase mt-0 mb-3">SUIVI & REPORTING</h2>
+                    <p class="text-secondary fs-6 lh-base mb-4">Le suivi continu des performances SEO et la production de rapports réguliers sont essentiels
+                       pour mesurer le succès et ajuster la stratégie. Nous analysons les données pour assurer une amélioration constante du référencement.</p>
+                    <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
+                        <div class="col">
+                            <div class="info-item d-flex align-items-start gap-3">
+                                <i class="fas fa-chart-line"></i>
+                                <p class="text-secondary mb-0">Surveillance des classements, du trafic et des conversions pour évaluer l'efficacité de la stratégie.</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="info-item d-flex align-items-start gap-3">
+                                <i class="fas fa-file-alt"></i>
+                                <p class="text-secondary mb-0">Rapports transparents et réguliers pour vous tenir informé des progrès et des actions futures.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="contact-button">Contact</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navItems = document.querySelectorAll('.nav-item-custom');
+            const stepContents = document.querySelectorAll('.process-step-content');
+
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // Remove 'active' from current nav item
+                    document.querySelector('.nav-item-custom.active').classList.remove('active');
+                    // Add 'active' to clicked nav item
+                    this.classList.add('active');
+
+                    // Hide all content sections
+                    stepContents.forEach(content => {
+                        content.classList.add('d-none');
+                    });
+
+                    // Show the targeted content section
+                    const targetId = this.dataset.target;
+                    document.getElementById(targetId).classList.remove('d-none');
+                });
+            });
+        });
+    </script>
+<!--steps END-->
 <!-- SEO - Avantages -->
     <section class="rts-hosting-feature-two cultured__white section__padding" style = "margin-bottom:100px;font-weight:normal;">
         <div class="container1">
             <div class="row g-40 justify-content-sm-center">
                 <div class="col-lg-6 col-md-10 col-sm-10">
                     <div class="rts-hosting-feature-two__image">
-                        <img src="https://www.vala.ma/themes/vala/assets/images/seo/seo-2.png" alt="" style="margin-top: 94px;">
+                        <img src="assets\2.png" alt="" style="margin-top: 94px;">
                     </div>
                 </div>
                 <div class="col-lg-5 offset-lg-1 col-md-10 col-sm-10">
@@ -4124,7 +4661,10 @@ monthlyBtn.addEventListener('click', () => {
     </section>
 
 <!-- SEO - Avantages END -->
+<!--user testimony -START -->
+    
 
+<!--user testimony -END -->
 <!-- SEO - Contact -->
 
 <div class="rts-cta-two cultured__white" style = "margin-bottom:100px;font-weight:normal;" >
