@@ -3562,7 +3562,7 @@ owa_cmds.push(['trackClicks']);
   <div class="toggle-switch-container relative" id="priceToggleContainer">
     <!-- Removed the toggle-indicator div -->
     <button class="toggle-button active" id="monthlyBtn">Mensuel</button>
-    <button class="toggle-button" id="trimesterbtn">Trimester</button>
+    <button class="toggle-button" id="trimesterbtn">Trimestriel</button>
 
   </div>
   </div>
@@ -4235,367 +4235,523 @@ monthlyBtn.addEventListener('click', () => {
     </div>
 
 <!--Steps START -->
- <style>
+<style>
         :root {
-            --primary-blue: #0166b9; 
-            --darker-blue: #054f99; 
+            --primary-orange: #005eff;
+            --darker-orange: #0948b3;
+            --light-bg: #f8f9fa;
+            --dark-text: #333;
+            --medium-text: #555;
+            --light-border: #eaeaea;
+            --card-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: Arial, sans-serif;
             background-color: #f0f2f5;
         }
 
         .process-container {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            max-width: 1200px;
-            margin: 40px auto;
+            max-width: 1400px;
+            width: 95%;
+            margin: 30px auto 60px;
+            display: flex;
+            flex-direction: column;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
             overflow: hidden;
         }
 
-        .process-navigation {
-            background-color: #f8f9fa;
-            border-bottom: 1px solid #e0e0e0;
+        .content-navigation-wrapper {
+            display: flex;
+            flex-direction: column;
         }
 
-        .nav-item-custom {
-            flex: 1;
-            text-align: center;
-            padding: 20px 10px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, color 0.3s ease;
+        @media (min-width: 992px) {
+            .content-navigation-wrapper {
+                flex-direction: row;
+                min-height: 600px;
+            }
+        }
+
+        /* Zigzag tabs on left */
+        .process-navigation-wrapper {
+            background-color: var(--light-bg);
+            padding: 40px 20px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            border-bottom: 1px solid var(--light-border);
+        }
+
+        @media (min-width: 992px) {
+            .process-navigation-wrapper {
+                border-bottom: none;
+                border-right: 1px solid var(--light-border);
+                flex: 0 0 35%;
+                max-width: 35%;
+                padding: 60px 30px;
+            }
+        }
+
+        .process-navigation {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .nav-item-circle-container {
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0;
+            margin-bottom: 0px;
+        }
+
+        .nav-item-circle-container:last-child {
+            margin-bottom: 0;
+        }
+
+        .nav-item-circle {
             display: flex;
             flex-direction: column;
             align-items: center;
-            color: #6c757d;
-            font-weight: 600;
-        }
-
-        .nav-item-custom i {
-            font-size: 28px;
-            margin-bottom: 8px;
-            color: #92e6c1; 
-            transition: color 0.3s ease;
-        }
-
-        /* Active state for navigation item */
-        .nav-item-custom.active {
-            background-color: var(--primary-blue);
-            color: #fff;
-            border-radius: 0 0 10px 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
             position: relative;
-            z-index: 2;
+            z-index: 1;
+            width: 190px;
+            padding: 10px 0;
+            transition: all 0.3s ease;
         }
 
-        .nav-item-custom.active i {
-            color: #fff; /* White icon for active tab */
+        .circle-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: #e9ecef;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 0px;
+            font-size: 28px;
+            color: #6c757d;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
         }
 
-        /* Specific colors for inactive icons (maintained for visual distinction as per original design) */
-        .process-navigation .nav-item-custom:nth-child(1) i { color: #f29a43; }
-        .process-navigation .nav-item-custom:nth-child(2) i { color: #1be48d; }
-        .process-navigation .nav-item-custom:nth-child(3) i { color: #f29a43; }
-        .process-navigation .nav-item-custom:nth-child(4) i { color: #5d6863; }
-        .process-navigation .nav-item-custom:nth-child(5) i { color: #c492ed; }
-        .process-navigation .nav-item-custom:nth-child(6) i { color: #8fd0f5; }
+        .nav-item-circle.active .circle-icon,
+        .nav-item-circle-container.preceding-active .circle-icon {
+            background: linear-gradient(135deg, var(--primary-orange) 0%, var(--darker-orange) 100%);
+            color: #fff;
+            box-shadow: 0 6px 15px rgba(6, 58, 230, 0.4);
+            transform: scale(1.05);
+        }
 
+        .nav-item-circle span {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--medium-text);
+            transition: color 0.3s ease;
+            padding: 0 10px;
+            margin-top: 15px;
+        }
+
+        .nav-item-circle.active span,
+        .nav-item-circle-container.preceding-active span {
+            color: var(--primary-orange);
+            font-weight: 700;
+        }
+
+        /* Zigzag layout for tabs */
+        @media (min-width: 992px) {
+            .nav-item-circle-container:nth-child(odd) {
+                justify-content: flex-start;
+            }
+            
+            .nav-item-circle-container:nth-child(even) {
+                justify-content: flex-end;
+            }
+        }
+
+        /* Content on right */
+        .process-content-main {
+            padding: 40px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
         .step-card {
-            width: 250px;
-            height: 250px;
-            background-color: var(--primary-blue);
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-orange) 0%, var(--darker-orange) 100%);
             border-radius: 15px;
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 8px 25px rgba(33, 150, 243, 0.3); /* Adjusted shadow color */
+            box-shadow: 0 10px 30px rgba(0, 26, 255, 0.4);
             color: #fff;
-            font-size: 55px;
-            font-weight: 700;
+            font-size: 45px;
+            font-weight: 800;
             text-align: center;
             line-height: 1.2;
-            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto 30px;
+            margin-bottom: 10px;
+        }
+
+        .step-card::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.1) 100%);
+            z-index: 1;
         }
 
         .step-number {
             padding: 20px;
+            position: relative;
+            z-index: 2;
         }
 
-        .step-number br {
-            display: block;
+        h2 {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+            color: var(--dark-text);
+            text-align: center;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary-orange);
+            border-radius: 2px;
+        }
+        
+        .content-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--medium-text);
+            text-align: center;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        
+        @media (min-width: 768px) {
+            .info-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 25px;
+            }
         }
 
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            background: var(--light-bg);
+            padding: 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+        
+        .info-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow);
+        }
+        
         .info-item i {
-            font-size: 36px;
-            color: var(--primary-blue); 
-            flex-shrink: 0;
-            padding-top: 5px;
-            padding-right: 10px;
+            font-size: 28px;
+            background: rgba(245, 89, 10, 0.1);
+            min-width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: var(--primary-orange);
+        }
+        
+        .info-item p {
+            flex: 1;
+            margin: 0;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--medium-text);
         }
 
         .contact-button {
-            background-color: var(--primary-blue);
+            background: linear-gradient(to right, var(--primary-orange), var(--darker-orange));
             color: #fff;
             border: none;
-            padding: 15px 30px;
-            border-radius: 5px;
+            padding: 16px 40px;
+            border-radius: 8px;
             font-size: 18px;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            transition: all 0.3s ease;
             text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(0, 38, 255, 0.3);
+            display: block;
+            margin: 30px auto 0;
+            max-width: 250px;
+            text-align: center;
+
         }
 
         .contact-button:hover {
-            background-color: var(--darker-blue);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 68, 255, 0.4);
+            background: linear-gradient(to right, var(--darker-orange), var(--primary-orange));
         }
 
-        /* Responsive adjustments for navigation */
-        @media (max-width: 768px) {
-            .process-navigation {
-                flex-wrap: wrap;
+        /* Responsive adjustments */
+        @media (max-width: 991.98px) {
+            .nav-item-circle-container {
+                justify-content: center;
+                margin-bottom: 25px;
             }
-            .nav-item-custom {
-                flex-basis: 33.33%; /* 3 items per row */
-                padding: 15px 5px;
+            
+            .nav-item-circle {
+                width: 140px;
             }
-            .nav-item-custom span {
-                font-size: 14px;
-            }
-            .nav-item-custom i {
+            
+            .circle-icon {
+                width: 60px;
+                height: 60px;
                 font-size: 24px;
             }
         }
 
-        @media (max-width: 576px) {
-            .nav-item-custom {
-                flex-basis: 50%; /* 2 items per row */
+        @media (max-width: 767.98px) {
+            body {
+                padding-top: 140px;
             }
-            .nav-item-custom span {
-                font-size: 12px;
-            }
-            .nav-item-custom i {
-                font-size: 20px;
-            }
-
+            
+            
             .step-card {
                 width: 180px;
                 height: 180px;
                 font-size: 40px;
             }
-            .contact-button {
-                width: 100%;
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .content-description {
+                font-size: 1rem;
             }
         }
     </style>
+</head>
+<body>
     <div class="process-container">
-        <div class="process-navigation d-flex justify-content-around" id="processNav">
-            <div class="nav-item-custom active" data-target="step1-content">
-                <i class="fas fa-search"></i>
-                <span>Définition des Objectifs</span>
+        <div class="content-navigation-wrapper">
+            <div class="process-navigation-wrapper">
+                <div class="process-navigation" id="processNav">
+                    <div class="nav-item-circle-container" data-target="step1-content">
+                        <div class="nav-item-circle">
+                            <div class="circle-icon"><i class="fas fa-bullseye"></i></div>
+                            <span>Définition des Objectifs</span>
+                        </div>
+                    </div>
+                    <div class="nav-item-circle-container" data-target="step2-content">
+                        <div class="nav-item-circle">
+                            <div class="circle-icon"><i class="fas fa-search"></i></div>
+                            <span>Audit SEO</span>
+                        </div>
+                    </div>
+                    <div class="nav-item-circle-container" data-target="step3-content">
+                        <div class="nav-item-circle">
+                            <div class="circle-icon"><i class="fas fa-chess"></i></div>
+                            <span>Stratégie & Planification</span>
+                        </div>
+                    </div>
+                    <div class="nav-item-circle-container" data-target="step4-content">
+                        <div class="nav-item-circle">
+                            <div class="circle-icon"><i class="fas fa-cogs"></i></div>
+                            <span>Technique Optimisation</span>
+                        </div>
+                    </div>
+                    <div class="nav-item-circle-container" data-target="step5-content">
+                        <div class="nav-item-circle active">
+                            <div class="circle-icon"><i class="fas fa-pen-fancy"></i></div>
+                            <span>Contenu & Netlinking</span>
+                        </div>
+                    </div>
+                    <div class="nav-item-circle-container" data-target="step6-content">
+                        <div class="nav-item-circle">
+                            <div class="circle-icon"><i class="fas fa-chart-line"></i></div>
+                            <span>Suivi & Reporting</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="nav-item-custom" data-target="step2-content">
-                <i class="fas fa-money-bill-wave"></i>
-                <span>Audit SEO</span>
-            </div>
-            <div class="nav-item-custom" data-target="step3-content">
-                <i class="fas fa-chart-line"></i>
-                <span>Stratégie & Planification</span>
-            </div>
-            <div class="nav-item-custom" data-target="step4-content">
-                <i class="fas fa-cogs"></i>
-                <span>Optimisation Technique</span>
-            </div>
-            <div class="nav-item-custom" data-target="step5-content">
-                <i class="fas fa-link"></i>
-                <span>Contenu & Netlinking</span>
-            </div>
-            <div class="nav-item-custom" data-target="step6-content">
-                <i class="fas fa-chart-bar"></i>
-                <span>Suivi & Reporting</span>
-            </div>
-        </div>
-
-        <div id="step-contents-container">
-            <div id="step1-content" class="process-step-content row g-4 p-4 align-items-start">
-                <div class="col-12 col-lg-auto d-flex justify-content-center">
+            
+            <div class="process-content-main">
+                <div id="step1-content" class="process-step-content content-container d-none">
                     <div class="step-card">
                         <div class="step-number">
-                            Étape <br> 01
+                            Step <br> 01
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-lg">
-                    <h2 class="text-dark fs-3 fw-bold text-uppercase mt-0 mb-3">DÉFINITION DES OBJECTIFS</h2>
-                    <p class="text-secondary fs-6 lh-base mb-4">Pour un projet SEO, une réunion initiale avec le client afin de définir ses attentes et les objectifs est cruciale avant son lancement. Cette étape permet de présenter au client les interventions générales réalisées sur les sites web pour améliorer leur référencement et le temps généralement nécessaire pour atteindre les résultats escomptés. Et par conséquent, d'avoir une vision plus ou moins générale du retour du référencement naturel (SEO).</p>
-                    <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
-                        <div class="col">
-                            <div class="info-item d-flex align-items-start gap-3">
-                                <i class="fas fa-hand-holding-usd"></i>
-                                <p class="text-secondary mb-0">L'avantage majeur du SEO est de générer un trafic qualifié, c'est-à-dire des visiteurs ayant une forte probabilité de conversion</p>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="info-item d-flex align-items-start gap-3">
-                                <i class="fas fa-hourglass-half"></i>
-                                <p class="text-secondary mb-0">En moyenne, il faut compter entre 3 et 6 mois pour observer les premiers résultats significatifs.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="contact-button">Contact</button>
-                </div>
-            </div>
+                    <h2>Définition des Objectifs</h2>
+                    <p class="content-description">
+Pour un projet SEO, une réunion initiale avec le client afin de définir ses attentes et les objectifs est cruciale avant son lancement. Cette étape permet de présenter au client les interventions générales réalisées sur les sites web pour améliorer leur référencement et le temps généralement nécessaire pour atteindre les résultats escomptés. Et par conséquent, d'avoir une vision plus au moins générale du retour du référencement naturel (SEO).
 
-            <div id="step2-content" class="process-step-content row g-4 p-4 align-items-start d-none">
-                <div class="col-12 col-lg-auto d-flex justify-content-center">
+                    </p>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <i class="fas fa-hand-holding-usd"></i>
+                            <p>L'avantage majeur du SEO est de générer un trafic qualifié, c'est-à-dire des visiteurs ayant une forte probabilité de conversion</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-hourglass-half"></i>
+                            <p>En moyenne, il faut compter entre 3 et 6 mois pour observer les premiers résultats significatifs</p>
+                        </div>
+                    </div>
+                    <button class="contact-button">Get Started</button>
+                </div>
+
+                <div id="step2-content" class="process-step-content content-container d-none">
                     <div class="step-card">
                         <div class="step-number">
-                            Étape <br> 02
+                            Step <br> 02
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-lg">
-                    <h2 class="text-dark fs-3 fw-bold text-uppercase mt-0 mb-3">AUDIT SEO</h2>
-                    <p class="text-secondary fs-6 lh-base mb-4">L'audit SEO est une analyse complète de votre site web pour identifier les points forts et les faiblesses
-                       qui affectent son classement dans les moteurs de recherche. Il couvre les aspects techniques, le contenu et l'autorité de domaine,
-                        fournissant une feuille de route pour les optimisations futures.</p>
-                    <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
-                        <div class="col">
-                            <div class="info-item d-flex align-items-start gap-3">
-                                <i class="fas fa-clipboard-list"></i>
-                                <p class="text-secondary mb-0">Analyse approfondie de la structure technique, du contenu et des backlinks pour un aperçu complet.</p>
-                            </div>
+                    <h2>AUDIT SEO</h2>
+                    <p class="content-description">
+L'audit SEO permet d'évaluer l'état de santé de votre site web en matière de référencement, d'analyser la situation de vos concurrents et d'évaluer le niveau de concurrence sur votre marché. Une recherche de mots-clés ciblés est ensuite effectuée afin d'orienter les efforts vers les utilisateurs naturellement intéressés par votre offre. Un document synthétisant toutes ces informations est finalement partagé.                    </p>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <i class="fas fa-clipboard-list"></i>
+                            <p>Analyser la santé de votre site web permet de savoir les axes d'amélioration à cibler pour améliorer votre trafic naturel</p>
                         </div>
-                        <div class="col">
-                            <div class="info-item d-flex align-items-start gap-3">
-                                <i class="fas fa-lightbulb"></i>
-                                <p class="text-secondary mb-0">Identification des opportunités d'amélioration et des problèmes à résoudre pour booster votre SEO.</p>
-                            </div>
+                        <div class="info-item">
+                            <i class="fas fa-lightbulb"></i>
+                            <p>La recherche de mots-clés ciblés est un élément fondamental et crucial pour attirer des prospects qualifiés</p>
                         </div>
                     </div>
-                    <button class="contact-button">Contact</button>
+                    <button class="contact-button">Get Started</button>
                 </div>
-            </div>
 
-            <div id="step3-content" class="process-step-content row g-4 p-4 align-items-start d-none">
-                <div class="col-12 col-lg-auto d-flex justify-content-center">
+                <div id="step3-content" class="process-step-content content-container d-none">
                     <div class="step-card">
                         <div class="step-number">
-                            Étape <br> 03
+                            Step <br> 03
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-lg">
-                    <h2 class="text-dark fs-3 fw-bold text-uppercase mt-0 mb-3">STRATÉGIE & PLANIFICATION</h2>
-                    <p class="text-secondary fs-6 lh-base mb-4">Basée sur l'audit, cette étape consiste à élaborer une stratégie SEO personnalisée, incluant la sélection des mots-clés, la planification du contenu et la définition des actions à entreprendre pour atteindre les objectifs fixés.</p>
-                    <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
-                        <div class="col">
-                            <div class="info-item d-flex align-items-start gap-3">
-                                <i class="fas fa-map-marked-alt"></i>
-                                <p class="text-secondary mb-0">Création d'une feuille de route claire avec les actions SEO prioritaires et leurs échéances.</p>
-                            </div>
+                    <h2>Stratégie & Planification</h2>
+                    <p class="content-description">
+Suite à une réunion avec le client et au partage de l'audit, une stratégie détaillée est élaborée afin de prévoir précisément les interventions à réaliser pendant la durée de la campagne SEO. Ceci permet de visualiser en détail et en toute transparence les les actions à mettre en œuvre, leur chronologie et les ressources qui y seront allouées.                    </p>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <p>Le respect des délais d'intervention est nécessaire pour assurer la continuité et l'avancement du projet.</p>
                         </div>
-                        <div class="col">
-                            <div class="info-item d-flex align-items-start gap-3">
-                                <i class="fas fa-bullseye"></i>
-                                <p class="text-secondary mb-0">Alignement de la stratégie SEO avec vos objectifs commerciaux globaux pour un impact maximal.</p>
-                            </div>
+                        <div class="info-item">
+                            <i class="fas fa-bullseye"></i>
+                            <p>Nous partageons la liste des interventions en toute transparence pour que vous sachiez précisément ce que nous allons exécuter.</p>
                         </div>
                     </div>
-                    <button class="contact-button">Contact</button>
+                    <button class="contact-button">Get Started</button>
                 </div>
-            </div>
 
-            <div id="step4-content" class="process-step-content row g-4 p-4 align-items-start d-none">
-                <div class="col-12 col-lg-auto d-flex justify-content-center">
+                <div id="step4-content" class="process-step-content content-container d-none">
                     <div class="step-card">
                         <div class="step-number">
-                            Étape <br> 04
+                            Step <br> 04
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-lg">
-                    <h2 class="text-dark fs-3 fw-bold text-uppercase mt-0 mb-3">OPTIMISATION TECHNIQUE</h2>
-                    <p class="text-secondary fs-6 lh-base mb-4">L'optimisation technique vise à améliorer la structure et les performances de votre site web pour les moteurs de recherche. Cela inclut la vitesse de chargement, l'indexabilité, la convivialité mobile et la gestion des erreurs.</p>
-                    <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
-                        <div class="col">
-                            <div class="info-item d-flex align-items-start gap-3">
-                                <i class="fas fa-tachometer-alt"></i>
-                                <p class="text-secondary mb-0">Amélioration de la vitesse du site et de l'expérience utilisateur pour un meilleur classement.</p>
-                            </div>
+                    <h2>Technique d'Optimisation</h2>
+                    <p class="content-description">
+Il est nécessaire de prévoir des améliorations techniques avant le lancement d'une campagne de création de contenu et de netlinking. Cela permet d'améliorer la qualité technique du site web pour les moteurs de recherche, car c'est un critère primordial. Parmi ces interventions, on peut citer l'optimisation de la vitesse de chargement, l'élimination des erreurs de balises et de liens, etc.                    </p>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <p>Les erreurs de balises HTML et de liens malformés nuisent sur le moyen et le long terme à votre score SEO.</p>
                         </div>
-                        <div class="col">
-                            <div class="info-item d-flex align-items-start gap-3">
-                                <i class="fas fa-mobile-alt"></i>
-                                <p class="text-secondary mb-0">Optimisation pour les appareils mobiles, essentielle pour le référencement moderne.</p>
-                            </div>
+                        <div class="info-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <p>L'optimisation de la version mobile du site web est un critère très important pour maintenir et améliorer votre référencement.</p>
                         </div>
                     </div>
-                    <button class="contact-button">Contact</button>
+                    <button class="contact-button">Get Started</button>
                 </div>
-            </div>
 
-            <div id="step5-content" class="process-step-content row g-4 p-4 align-items-start d-none">
-                <div class="col-12 col-lg-auto d-flex justify-content-center">
+                <div id="step5-content" class="process-step-content content-container d-none">
                     <div class="step-card">
                         <div class="step-number">
-                            Étape <br> 05
+                            Step <br> 05
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-lg">
-                    <h2 class="text-dark fs-3 fw-bold text-uppercase mt-0 mb-3">CONTENU & NETLINKING</h2>
-                    <p class="text-secondary fs-6 lh-base mb-4">Cette phase se concentre sur la création de contenu de qualité et l'acquisition de backlinks pertinents.
-                       Un contenu riche et des liens externes de confiance sont cruciaux pour l'autorité de votre site et son positionnement.</p>
-                    <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
-                        <div class="col">
-                            <div class="info-item d-flex align-items-start gap-3">
-                                <i class="fas fa-pencil-alt"></i>
-                                <p class="text-secondary mb-0">Développement de contenu optimisé pour les mots-clés ciblés et l'engagement des utilisateurs.</p>
-                            </div>
+                    <h2>Contenu & Netlinking</h2>
+                    <p class="content-description">
+Après la phase de configuration SEO et la correction des erreurs techniques, une campagne de contenu et de netlinking est lancée. L'amélioration conjointe de ces deux aspects contribue à renforcer l'image et l'autorité de votre site web. Bien que la quantité soit prise en compte par les moteurs de recherche, la qualité demeure primordiale, car l'objectif final est de satisfaire les besoins des visiteurs.                    </p>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <i class="fas fa-pen-alt"></i>
+                            <p>
+Un contenu SEO être optimisé avec les mots-clés prévus et surtout répondre aux questions et aux attentes du visiteur</p>
                         </div>
-                        <div class="col">
-                            <div class="info-item d-flex align-items-start gap-3">
-                                <i class="fas fa-globe"></i>
-                                <p class="text-secondary mb-0">Stratégies d'acquisition de liens de haute qualité pour renforcer l'autorité de votre domaine.</p>
-                            </div>
+                        <div class="info-item">
+                            <i class="fas fa-link"></i>
+                            <p>Le nombre et la qualité des backlinks contribuent à l'autorité d'un site web, la qualité étant prépondérante</p>
                         </div>
                     </div>
-                    <button class="contact-button">Contact</button>
+                    <button class="contact-button">Get Started</button>
                 </div>
-            </div>
 
-            <div id="step6-content" class="process-step-content row g-4 p-4 align-items-start d-none">
-                <div class="col-12 col-lg-auto d-flex justify-content-center">
+                <div id="step6-content" class="process-step-content content-container d-none">
                     <div class="step-card">
                         <div class="step-number">
-                            Étape <br> 06
+                            Step <br> 06
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-lg">
-                    <h2 class="text-dark fs-3 fw-bold text-uppercase mt-0 mb-3">SUIVI & REPORTING</h2>
-                    <p class="text-secondary fs-6 lh-base mb-4">Le suivi continu des performances SEO et la production de rapports réguliers sont essentiels
-                       pour mesurer le succès et ajuster la stratégie. Nous analysons les données pour assurer une amélioration constante du référencement.</p>
-                    <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
-                        <div class="col">
-                            <div class="info-item d-flex align-items-start gap-3">
-                                <i class="fas fa-chart-line"></i>
-                                <p class="text-secondary mb-0">Surveillance des classements, du trafic et des conversions pour évaluer l'efficacité de la stratégie.</p>
-                            </div>
+                    <h2>Suivi & Reporting</h2>
+                    <p class="content-description">
+Chaque mois, nous vous envoyons un rapport pour vous tenir informé de l'avancement de votre projet SEO. Une réunion en ligne est également prévue pour vous présenter en détail les interventions réalisées, leurs résultats et les prochaines étapes. Nous répondons également à vos questions éventuelles, qu'elles soient d'ordre technique ou stratégique.                    </p>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <i class="fas fa-chart-line"></i>
+                            <p>La réunion est effectuée avec l'équipe référencement en ligne et ce selon votre disponibilité</p>
                         </div>
-                        <div class="col">
-                            <div class="info-item d-flex align-items-start gap-3">
-                                <i class="fas fa-file-alt"></i>
-                                <p class="text-secondary mb-0">Rapports transparents et réguliers pour vous tenir informé des progrès et des actions futures.</p>
-                            </div>
+                        <div class="info-item">
+                            <i class="fas fa-file-alt"></i>
+                            <p>Le suivi et l'amélioration du référencement naturel doivent être continus pour rester compétitif.</p>
                         </div>
                     </div>
-                    <button class="contact-button">Contact</button>
+                    <button class="contact-button">Get Started</button>
                 </div>
             </div>
         </div>
@@ -4603,26 +4759,53 @@ monthlyBtn.addEventListener('click', () => {
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const navItems = document.querySelectorAll('.nav-item-custom');
-            const stepContents = document.querySelectorAll('.process-step-content');
+            const navItemContainers = document.querySelectorAll('.nav-item-circle-container');
+            const stepContents = document.querySelectorAll('.process-step-content'); // Select all content sections
 
-            navItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    // Remove 'active' from current nav item
-                    document.querySelector('.nav-item-custom.active').classList.remove('active');
-                    // Add 'active' to clicked nav item
-                    this.classList.add('active');
+            function updateActiveState(clickedContainer) {
+                // Remove 'active' and 'preceding-active' from all nav item containers and their circles
+                navItemContainers.forEach(navContainer => {
+                    navContainer.classList.remove('active', 'preceding-active');
+                    navContainer.querySelector('.nav-item-circle').classList.remove('active');
+                });
 
-                    // Hide all content sections
-                    stepContents.forEach(content => {
-                        content.classList.add('d-none');
-                    });
+                // Add 'active' to the clicked nav item container and its circle
+                clickedContainer.classList.add('active');
+                clickedContainer.querySelector('.nav-item-circle').classList.add('active');
 
-                    // Show the targeted content section
-                    const targetId = this.dataset.target;
-                    document.getElementById(targetId).classList.remove('d-none');
+                // Add 'preceding-active' to all preceding siblings
+                let current = clickedContainer.previousElementSibling;
+                while (current) {
+                    if (current.classList.contains('nav-item-circle-container')) {
+                        current.classList.add('preceding-active');
+                        current.querySelector('.nav-item-circle').classList.add('active'); // Also make the circle active
+                    }
+                    current = current.previousElementSibling;
+                }
+
+                // Hide all content sections
+                stepContents.forEach(content => {
+                    content.classList.add('d-none');
+                });
+
+                // Show the targeted content section
+                const targetId = clickedContainer.dataset.target;
+                document.getElementById(targetId).classList.remove('d-none');
+            }
+
+            navItemContainers.forEach(container => {
+                container.addEventListener('click', function() {
+                    updateActiveState(this);
                 });
             });
+
+            // Set the fifth tab as active on initial load and show its content
+            if (navItemContainers.length > 4) {
+                updateActiveState(navItemContainers[4]);
+            } else if (navItemContainers.length > 0) {
+                // Fallback to first tab if less than 5 exist
+                updateActiveState(navItemContainers[0]);
+            }
         });
     </script>
 <!--steps END-->
@@ -4661,10 +4844,7 @@ monthlyBtn.addEventListener('click', () => {
     </section>
 
 <!-- SEO - Avantages END -->
-<!--user testimony -START -->
-    
 
-<!--user testimony -END -->
 <!-- SEO - Contact -->
 
 <div class="rts-cta-two cultured__white" style = "margin-bottom:100px;font-weight:normal;" >
