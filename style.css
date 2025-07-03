@@ -1522,6 +1522,7 @@
       height: auto;
       border-radius: 15px;
       margin-left: 70px;
+      margin-bottom: 100px;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     }
 
@@ -2381,7 +2382,8 @@
     /* Default text color (gray) */
     background-color: transparent; /* Default background */
     font-size: 0.9rem;
-    border: none !important;
+    
+    border: none ;
   }
 
   .toggle-button.active {
@@ -2422,7 +2424,7 @@
     /* Rotate for the curved arrow effect */
   }
    .testimonial-card {
-            padding: 30px 40px; /* Reduced vertical padding (top/bottom) to 30px, kept horizontal at 40px */
+            padding: 30px 40px; 
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             display: flex;
@@ -2475,10 +2477,9 @@
 
         .testimonial-card img {
             width: 80px; /* Way smaller image */
-            height: 80px; /* Way smaller image */
+            height: auto; /* Way smaller image */
             border-radius: 100px;
-            margin-right: 10px; /* Adjusted margin for tiny image */
-            border: none
+            margin-right: 10px; 
         }
 
         .testimonial-card.light-bg .author-info img {
@@ -2496,7 +2497,7 @@
         /* Adjustments for smaller screens */
         @media (max-width: 767.98px) {
             .testimonial-card {
-                padding: 25px 30px; /* Adjusted padding for mobile to keep it reasonable */
+                padding: 25px 30px; 
             }
             .quote-icon {
                 font-size: 3em;
@@ -2697,7 +2698,6 @@
     position: relative;
     overflow: hidden; /* Keep overflow hidden for content within the arrow */
     margin: 0 auto 30px;
-    margin-bottom: 10px;
 
     /* --- Clip-path for a significantly larger arrow head --- */
 clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
@@ -2803,7 +2803,7 @@ clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
             padding: 16px 40px;
             border-radius: 8px;
             font-size: 18px;
-            font-weight: 700;
+            font-weight: 800;
             cursor: pointer;
             transition: all 0.3s ease;
             text-transform: uppercase;
@@ -2870,7 +2870,6 @@ clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
             background-color: #f8fbfd; /* Light blueish-white background */
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            font-family: 'Arial', sans-serif; /* A more common, clean font */
         }
 
         /* Title styling */
