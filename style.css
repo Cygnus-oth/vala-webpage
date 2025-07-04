@@ -2101,67 +2101,66 @@
     max-width: 1200px;
     width: 100%;
     margin-left: auto;
-    /* Center the container */
     margin-right: auto;
-    /* Center the container */
     padding: 20px;
-    /* Add padding around the cards */
-    display: flex;
-    /* Use flexbox for horizontal layout */
-    flex-wrap: wrap;
-    /* Prevent cards from wrapping to the next line initially */
-    overflow-x: auto;
-    /* Enable horizontal scrolling if cards overflow */
-    gap: 2rem;
-    /* Tailwind's gap-8 is 2rem */
-    justify-content: center;
-    /* Center the cards if there's extra space */
-    -webkit-overflow-scrolling: touch;
-    /* Smooth scrolling on iOS */
-  }
+    display: flex; /* Use flexbox for horizontal layout */
+    /* Key change: Ensure no wrapping for horizontal scroll */
+    flex-wrap: nowrap; /* Forces items to stay on one line */
+    overflow-x: auto; /* Enable horizontal scrolling if cards overflow */
+    gap: 2rem; /* Tailwind's gap-8 is 2rem */
+    /* Remove justify-content: center for horizontal scroll,
+       as it might hide the scrollbar or create empty space.
+       We'll align to start and add padding. */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 
-  /* Modified: Removed outer border/shadow for the plan-card directly */
-  .plan-card {
+    /* Optional: Add scroll-snap for better mobile experience */
+    scroll-snap-type: x mandatory; /* Snaps cards into view */
+    padding-bottom: 10px; /* Ensures scrollbar is visible */
+    /* Adjust padding-left/right for mobile view */
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Modified: Removed outer border/shadow for the plan-card directly */
+.plan-card {
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: none;
-    /* Removed shadow */
     padding: 30px;
     display: flex;
     flex-direction: column;
-    height: 100%;
-    /* Ensure cards are same height */
-    flex-shrink: 0;
-    /* Prevent cards from shrinking */
-    width: 350px;
-    border: 1px solid #e5e7eb;
-    /* Added a subtle border to define the card area */
+    height: 100%; /* Ensure cards are same height */
+    flex-shrink: 0; /* Prevent cards from shrinking */
+    width: 350px; /* Fixed width for horizontal scroll */
+    border: 1px solid #e5e7eb; /* Added a subtle border to define the card area */
     transition: all 0.3s ease;
-  }
 
-  @media (min-width: 768px) {
+    /* Optional: Align card for scroll-snap */
+    scroll-snap-align: center;
+}
 
+/* Media query for tablet and desktop screens */
+@media (min-width: 768px) {
     .pricing-card-container {
-      flex-wrap: wrap;
-      /* Allow wrapping on medium screens */
-      overflow-x: visible;
-      /* Disable horizontal scroll on medium+ screens */
+        flex-wrap: wrap; /* Allow wrapping on medium screens */
+        overflow-x: visible; /* Disable horizontal scroll on medium+ screens */
+        justify-content: center; /* Re-center cards on larger screens */
+        padding-left: 20px; /* Reset padding for wider screens if needed, or adjust */
+        padding-right: 20px; /* Reset padding for wider screens if needed, or adjust */
     }
 
     .plan-card {
-      width: calc(50% - 1rem);
-      /* Two columns with gap */
+        width: calc(50% - 1rem); /* Two columns with gap */
     }
-  }
+}
 
-  @media (min-width: 1024px) {
-
+/* Media query for large desktop screens */
+@media (min-width: 1024px) {
     /* lg breakpoint */
     .plan-card {
-      width: calc(33.333% - 1.333rem);
-      /* Three columns with gap */
+        width: calc(33.333% - 1.333rem); /* Three columns with gap */
     }
-  }
+}
 
   .plan-card.premium {
     background-image: linear-gradient(to bottom right, #0948b3, #3017be);
@@ -2721,7 +2720,18 @@
 
     /* --- Clip-path for a significantly larger arrow head --- */
 clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+}
+@media (max-width: 768px) {
+    .step-card {
+        width: 230px; /* Slightly smaller fixed width */
+        /* You might adjust font-size or padding here too */
+    }
+}
 
+@media (max-width: 480px) {
+    .step-card {
+        width: 200px; /* Even smaller fixed width */
+    }
 }
 
 .step-card::before {
