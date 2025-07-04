@@ -1343,6 +1343,27 @@
       color: var(--gray);
       margin-bottom: 20px;
     }
+    /* to change the card when hovoring over them ==>start */
+.single-plan:hover {
+    background: linear-gradient(135deg, #3154c7 0%, #366bc5 100%);
+}
+
+.single-plan {
+    transition: background 0.3s ease-in-out; 
+}
+.single-plan:hover .plan-title, 
+.single-plan:hover .description, 
+.single-plan:hover .plan-icon i {
+    color: #ffffff !important; 
+    transition: color 0.3s ease-in-out; 
+}
+
+.single-plan .plan-title,
+.single-plan .description,
+.single-plan .plan-icon i {
+    transition: color 0.3s ease-in-out;
+}
+/* to change the card when hovoring over them ==>end */
 
     .border-separator {
       height: 1px;
@@ -2148,6 +2169,11 @@
     border: none;
     /* Premium card does not need a border due to gradient */
   }
+  .plan-card.premium h4 {
+    color: white;
+    border: none;
+
+  }
 
   .plan-card.cloud-startup {
     background-color: #f7f9fc;
@@ -2531,12 +2557,6 @@
             --light-border: #eaeaea;
             --card-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
         }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f2f5;
-        }
-
         .process-container {
             max-width: 1400px;
             width: 95%;

@@ -81,38 +81,32 @@ monthlyBtn.addEventListener('click', () => {
     trimesterbtn.classList.remove('active');
   });
 
+/**stats */
 
+document.addEventListener('DOMContentLoaded', function() {
+  const navItemContainers = document.querySelectorAll('.nav-item-circle-container');
+  const stepContents = document.querySelectorAll('.process-step-content'); // Select all content sections
 
-  
-        document.addEventListener('DOMContentLoaded', function() {
-            const navItemContainers = document.querySelectorAll('.nav-item-circle-container');
-            const stepContents = document.querySelectorAll('.process-step-content'); // Select all content sections
+  function updateActiveState(clickedContainer) {
+      navItemContainers.forEach(navContainer => {
+          navContainer.classList.remove('active', 'preceding-active');
+          navContainer.querySelector('.nav-item-circle').classList.remove('active');
+      });
 
-            function updateActiveState(clickedContainer) {
-                // Remove 'active' and 'preceding-active' from all nav item containers and their circles
-                navItemContainers.forEach(navContainer => {
-                    navContainer.classList.remove('active', 'preceding-active');
-                    navContainer.querySelector('.nav-item-circle').classList.remove('active');
-                });
+  clickedContainer.classList.add('active');
+  clickedContainer.querySelector('.nav-item-circle').classList.add('active');
 
-                // Add 'active' to the clicked nav item container and its circle
-                clickedContainer.classList.add('active');
-                clickedContainer.querySelector('.nav-item-circle').classList.add('active');
-
-                // Add 'preceding-active' to all preceding siblings
-                let current = clickedContainer.previousElementSibling;
-                while (current) {
-                    if (current.classList.contains('nav-item-circle-container')) {
-                        current.classList.add('preceding-active');
-                        current.querySelector('.nav-item-circle').classList.add('active'); // Also make the circle active
-                    }
-                    current = current.previousElementSibling;
-                }
-
-                // Hide all content sections
-                stepContents.forEach(content => {
-                    content.classList.add('d-none');
-                });
+  let current = clickedContainer.previousElementSibling;
+  while (current) {
+    if (current.classList.contains('nav-item-circle-container')) {
+        current.classList.add('preceding-active');
+        current.querySelector('.nav-item-circle').classList.add('active'); // Also make the circle active
+    }
+    current = current.previousElementSibling;
+  }
+  stepContents.forEach(content => {
+    content.classList.add('d-none');
+  });
 
                 // Show the targeted content section
                 const targetId = clickedContainer.dataset.target;
