@@ -2142,11 +2142,11 @@
 /* Media query for tablet and desktop screens */
 @media (min-width: 768px) {
     .pricing-card-container {
-        flex-wrap: wrap; /* Allow wrapping on medium screens */
-        overflow-x: visible; /* Disable horizontal scroll on medium+ screens */
-        justify-content: center; /* Re-center cards on larger screens */
-        padding-left: 20px; /* Reset padding for wider screens if needed, or adjust */
-        padding-right: 20px; /* Reset padding for wider screens if needed, or adjust */
+        flex-wrap: wrap; 
+        overflow-x: visible; 
+        justify-content: center; 
+        padding-left: 20px; 
+        padding-right: 20px; 
     }
 
     .plan-card {
@@ -2176,26 +2176,17 @@
 
   .plan-card.cloud-startup {
     background-color: #f7f9fc;
-    /* Background matches the image, slightly different from basic */
     border: 1px solid #e5e7eb;
-    /* Added a subtle border */
   }
 
-  /* Hover state for all plan cards */
   .plan-card:hover {
-    background-color: #2563eb;
-    /* Blue background on hover */
+    background-color: #2a28cc;
     background-image: none;
-    /* Remove gradient if it was premium */
     color: white;
-    /* White text on hover */
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-    /* More pronounced shadow on hover */
     transform: translateY(-5px);
-    /* Slight lift effect */
   }
 
-  /* Specific hover adjustments for premium card */
   .plan-card.premium:hover {
     background-image: linear-gradient(to bottom right, #4F71FF, #3715f7);
     color: white;
@@ -2215,41 +2206,32 @@
 
   .plan-card.basic .plan-icon {
     background-color: #e0e8ff;
-    /* Light purple */
   }
 
   .plan-card.premium .plan-icon {
     background-color: rgba(255, 255, 255, 0.2);
-    /* Transparent white for contrast */
   }
 
   .plan-card.cloud-startup .plan-icon {
     background-color: #e0e8ff;
-    /* Light purple */
   }
 
-  /* Icon color change on hover of the entire card */
   .plan-card:hover .plan-icon {
     background-color: rgba(255, 255, 255, 0.2);
-    /* Transparent white on hover for all icon backgrounds */
   }
 
-  /* SVG fill color change on hover of the entire card */
   .plan-card .plan-icon svg path {
     transition: fill 0.3s ease;
   }
 
   .plan-card:hover .plan-icon svg path {
     fill: white;
-    /* Icon fill to white on hover for all cards */
   }
 
 
   .plan-card .plan-title {
     font-size: 1.875rem;
-    /* text-3xl */
     font-weight: 700;
-    /* font-bold */
     margin-bottom: 8px;
   }
     .plan-card:hover .plan-title{
@@ -2258,12 +2240,9 @@
 
   .plan-card .description {
     font-size: 0.875rem;
-    /* text-sm */
     color: #6b7280;
-    /* text-gray-500 */
     margin-bottom: 20px;
     transition: color 0.3s ease;
-    /* Transition for description text */
   }
 
   .plan-card.premium .description {
@@ -2547,6 +2526,7 @@
         }
 
 
+
 :root {
             --primary-orange: #005eff;
             --darker-orange: #0948b3;
@@ -2744,6 +2724,7 @@ clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
 }
 
         .step-number {
+          width: 300px;
             padding: 50px;
             position: relative;
             z-index: 2;
