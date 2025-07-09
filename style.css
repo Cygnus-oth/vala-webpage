@@ -1544,8 +1544,10 @@
       border-radius: 15px;
       margin-left: 70px;
       margin-bottom: 100px;
+      border-color: #0774FF;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     }
+    
 
     .rts-hosting-feature-two__content .title {
       font-size: 40px;
