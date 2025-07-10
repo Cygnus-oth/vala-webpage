@@ -2136,7 +2136,7 @@
     width: 350px; /* Fixed width for horizontal scroll */
     border: 1px solid #e5e7eb; /* Added a subtle border to define the card area */
     transition: all 0.3s ease;
-
+ 
     /* Optional: Align card for scroll-snap */
     scroll-snap-align: center;
 }
