@@ -2165,9 +2165,10 @@
 }
 
   .plan-card.premium {
-    background-image: linear-gradient(to bottom right, #0948b3, #3017be);
+    background-image: linear-gradient(to bottom right, #1569d5, #0849b3);
     color: white;
     border: none;
+    
     /* Premium card does not need a border due to gradient */
   }
   .plan-card.premium h4 {
@@ -2182,15 +2183,15 @@
   }
 
   .plan-card:hover {
-    background-color: #2a28cc;
-    background-image: none;
+    background-color: #0849b3;
+    background-image: url('assets/bg__snap.png'); /* Path to your image */
     color: white;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     transform: translateY(-5px);
   }
 
   .plan-card.premium:hover {
-    background-image: linear-gradient(to bottom right, #4F71FF, #3715f7);
+    background-image: linear-gradient(to bottom right, #0849b3, #0849b3);
     color: white;
   }
 
@@ -2530,8 +2531,8 @@
 
 
 :root {
-            --primary-orange: #005eff;
-            --darker-orange: #0948b3;
+            --lither-blue: #1569d5;
+            --vala-blue: #0849b3;
             --light-bg: #f8f9fa;
             --dark-text: #333;
             --medium-text: #555;

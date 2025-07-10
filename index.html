@@ -3496,8 +3496,7 @@ monthlyBtn.addEventListener('click', () => {
   .plan-card:hover {
     background-color: #2563eb;
     /* Blue background on hover */
-    background-image: none;
-    /* Remove gradient if it was premium */
+    background-image: url('assets/bg__snap.png'); /* Path to your image */
     color: white;
     /* White text on hover */
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
@@ -3856,7 +3855,11 @@ monthlyBtn.addEventListener('click', () => {
 
   .plan-card:hover {
     background-color: #2a28cc;
-    background-image: none;
+      background-image: url('assets/bg__snap.png'),url('assets/bg__snap.png');
+      background-repeat: no-repeat;
+      background-position:
+        left top,     /* First instance of the image */
+        right bottom; /* Path to your image */
     color: white;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     transform: translateY(-5px);
@@ -4251,6 +4254,7 @@ monthlyBtn.addEventListener('click', () => {
     </div>
     <br>
     <a href = "https://www.myvala.com/cart.php?a=confproduct&i=1" class="buy__plan" id="standardPriceBtn">Price: 2800 DHS/Mois (HT) &rarr;</a>
+  
   </div>
 
   <!-- Premium Card -->
@@ -4264,6 +4268,7 @@ monthlyBtn.addEventListener('click', () => {
     <h4 class="plan-title">Pack Premium</h4>
     <p class="description">E-commerces, sites à fort trafic ou en concurrence élevée</p>
     <div class="border-separator"></div>
+    
     <div class="plan-feature">
       <ul class="plan-feature__list">
         <li>
@@ -4365,16 +4370,13 @@ monthlyBtn.addEventListener('click', () => {
 
 </div>
 
-
-
-
 <!--  SEO - Pricing END-->
-
 
 <style>
       /* to change the card when hovoring over them ==>start */
 .single-plan:hover {
-    background: linear-gradient(135deg, #3154c7 0%, #366bc5 100%);
+    background-color: #0849b3;
+
 }
 
 .single-plan {
@@ -5181,7 +5183,7 @@ Chaque mois, nous vous envoyons un rapport pour vous tenir informé de l'avancem
                         <h4><span>Audit SEO Gratuit - Notre équipe SEO est prête à vous accompagner</span></h4>
                         <p>Des questions sur le SEO ? Besoin d’un audit ou d’un accompagnement sur le long terme ? Notre équipe est à votre écoute, contactez-nous !</p>
                         <div class="support-action d-inline-flex flex-wrap" style="    flex-direction: column;">
-                            <a style = "bac;margin: 20px;" href="https://api.whatsapp.com/send/?phone=%2B212648143014&text&type=phone_number&app_absent=0" class=" mr-3"> <img src="https://static.whatsapp.net/rsrc.php/yZ/r/JvsnINJ2CZv.svg"></a>
+                            <a style = "bac ; margin: 20px;" href="https://api.whatsapp.com/send/?phone=%2B212648143014&text&type=phone_number&app_absent=0" class=" mr-3"> <img src="https://static.whatsapp.net/rsrc.php/yZ/r/JvsnINJ2CZv.svg"></a>
                             <a href="tel:+212528225522" class="mr-3"><span>0528225522</span></a>
                             <a href="tel:+212528213045" class="mr-3"><span>0528213045</span></a>
                         </div>

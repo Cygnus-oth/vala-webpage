@@ -127,22 +127,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 updateActiveState(navItemContainers[0]);
             }
         });
-
+/*for the packs section when its on small screens*/
 document.addEventListener('DOMContentLoaded', () => {
     const navItems = document.querySelectorAll('.nav-item-circle-container');
 
     navItems.forEach(item => {
         item.addEventListener('click', (event) => {
             if (window.innerWidth <= 768) {
-                const targetId = item.dataset.target; 
+                const targetId = item.dataset.target;
                 const targetElement = document.getElementById(targetId);
 
                 if (targetElement) {
                     targetElement.scrollIntoView({
-                        behavior: 'smooth', 
-                        block: 'start'
+                        behavior: 'smooth',
+                        block: 'nearest', // Adjusts vertical position if needed
+                        inline: 'start'   // Scrolls horizontally to bring the start of the element into view
                     });
-
                 }
             }
         });
