@@ -4404,9 +4404,75 @@ monthlyBtn.addEventListener('click', () => {
     
 <!-- PRICING PLAN -->
 
+<style>
+/* --- Base Card Styling (Clean and simple to let the effect shine) --- */
+.single-plan {
+    width: 380px; /* Using your specified dimensions */
+    height: 390px; /* Using your specified dimensions */
+    background-color: #f8f8f8; /* Light, clean background */
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow: hidden; /* Good practice */
+    position: relative; /* If needed for other elements */
+    padding: 30px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.4s ease-out; /* Add filter transition */
+}
+
+/* Optional: Slight lift on hover for general interactivity */
+.single-plan:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 25px;
+
+box-shadow:  29px 29px 59px #bebebe,
+             -29px -29px 59px #ffffff;
+}
+
+/* --- Content Styling (adjust colors for readability against your card background) --- */
+.single-plan .plan-icon i {
+    font-size: 60px;
+    margin-bottom: px;
+    color: #0848b3; /* Example color, match your brand */
+}
+
+.single-plan .plan-title {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #333;
+     /* Darker text for readability */
+}
+
+.single-plan .description {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #666; /* Slightly lighter text */
+}
+
+/* --- New styles for the blur effect --- */
+/* This class will be added to the parent container when any card is hovered */
+.tab__content.blur-active .single-plan {
+    filter: blur(4px); /* Apply blur to all cards when blur-active is present */
+}
+
+/* When a card is hovered within the blur-active state, remove its blur */
+.tab__content.blur-active .single-plan:hover {
+    filter: blur(0px); /* De-blur the hovered card */
+}
+
+/* Ensure the .active class on cards still works if you intend it to have a specific default style */
+.single-plan.active {
+
+}
+</style>
+
+
 <div class="tab__content open" id="monthly">
     <div class="row monthly g-30">
-        <!-- Case 1 : Stockage SSD -->
         <div class="col-lg-4 col-md-6">
             <div class="single-plan has-box-shadow">
                 <div class="single-plan__content">
@@ -4419,8 +4485,7 @@ monthlyBtn.addEventListener('click', () => {
             </div>
         </div>
 
-        <!-- Case 2 : Serveurs Puissants (active) -->
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-4 col-md-6 perspective-container">
             <div class="single-plan has-box-shadow active">
                 <div class="single-plan__content">
                     <div class="plan-icon">
@@ -4432,20 +4497,18 @@ monthlyBtn.addEventListener('click', () => {
             </div>
         </div>
 
-        <!-- Case 3 : Cloud & Load Balancing -->
         <div class="col-lg-4 col-md-6">
             <div class="single-plan has-box-shadow">
                 <div class="single-plan__content">
                     <div class="plan-icon">
                         <i class="fa-solid fa-gear" style="color: #0948b3; font-size: 40px;"></i>
                     </div>
-                     <h4 class="plan-title">Configurations et Correctifs</h4>
-                     <p class="description">Avant de lancer une stratégie SEO axée sur le contenu et le netlinking, certaines étapes sont essentielles comme la configuration de Google Search Console, la correction des erreurs, renforcer la sécurité du site etc..</p>
+                    <h4 class="plan-title">Configurations et Correctifs</h4>
+                    <p class="description">Avant de lancer une stratégie SEO axée sur le contenu et le netlinking, certaines étapes sont essentielles comme la configuration de Google Search Console, la correction des erreurs, renforcer la sécurité du site etc..</p>
                 </div>
             </div>
         </div>
 
-        <!-- Case 4 : Temps de disponibilité -->
         <div class="col-lg-4 col-md-6">
             <div class="single-plan has-box-shadow">
                 <div class="single-plan__content">
@@ -4458,7 +4521,6 @@ monthlyBtn.addEventListener('click', () => {
             </div>
         </div>
 
-        <!-- Case 5 : Multi-Localisation (active) -->
         <div class="col-lg-4 col-md-6">
             <div class="single-plan has-box-shadow active">
                 <div class="single-plan__content">
@@ -4467,12 +4529,10 @@ monthlyBtn.addEventListener('click', () => {
                     </div>
                     <h4 class="plan-title">Suivi et Rapport</h4>
                     <p class="description">Un suivi continu préserve les progrès réalisé, évite toute pénalisation, assure l’adaptation aux évolutions des moteurs de recherche et à la concurrence. Un rapport mensuel récapitule l’état de santé de votre site.</p>
-                    
                 </div>
             </div>
         </div>
 
-        <!-- Case 6 : Accélérateur web -->
         <div class="col-lg-4 col-md-6">
             <div class="single-plan has-box-shadow">
                 <div class="single-plan__content">
@@ -4484,12 +4544,33 @@ monthlyBtn.addEventListener('click', () => {
                 </div>
             </div>
         </div>
-
     </div>
 </div>
-</div>
-</div>
-</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const tabContent = document.querySelector('.tab__content'); // The parent container for your cards
+
+    tabContent.addEventListener('mouseover', (event) => {
+        const hoveredCard = event.target.closest('.single-plan');
+        if (hoveredCard) {
+            tabContent.classList.add('blur-active');
+        }
+    });
+
+    tabContent.addEventListener('mouseout', (event) => {
+        const exitedCard = event.target.closest('.single-plan');
+        if (exitedCard) {
+            // Check if the mouse is truly outside the tabContent to remove blur-active
+            // This prevents flickering when moving between cards
+            if (!tabContent.contains(event.relatedTarget)) {
+                tabContent.classList.remove('blur-active');
+            }
+        }
+    });
+});
+</script>
+
 
 <!-- Nos interventions end -->
  <style>
