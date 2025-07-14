@@ -162,7 +162,6 @@
 }
 
 .rts-pricing-plan .single-plan__content .plan-icon {
-  margin-bottom: 40px;
   transition: all 0.3s ease;
 }
 .rts-pricing-plan .single-plan__content .plan-title {
@@ -2108,44 +2107,27 @@
     display: flex; /* Use flexbox for horizontal layout */
     /* Key change: Ensure no wrapping for horizontal scroll */
     flex-wrap: nowrap; /* Forces items to stay on one line */
-    overflow-x: auto; /* Enable horizontal scrolling if cards overflow */
+    overflow-x: scroll; 
+    scroll-snap-type: x proximity; 
     gap: 2rem; /* Tailwind's gap-8 is 2rem */
-    /* Remove justify-content: center for horizontal scroll,
-       as it might hide the scrollbar or create empty space.
-       We'll align to start and add padding. */
+
     -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 
     /* Optional: Add scroll-snap for better mobile experience */
-    scroll-snap-type: x mandatory; /* Snaps cards into view */
     padding-bottom: 10px; /* Ensures scrollbar is visible */
     /* Adjust padding-left/right for mobile view */
     padding-left: 20px;
     padding-right: 20px;
 }
 
-/* Modified: Removed outer border/shadow for the plan-card directly */
-.plan-card {
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: none;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    height: 100%; /* Ensure cards are same height */
-    flex-shrink: 0; /* Prevent cards from shrinking */
-    width: 350px; /* Fixed width for horizontal scroll */
-    border: 1px solid #e5e7eb; /* Added a subtle border to define the card area */
-    transition: all 0.3s ease;
- 
-    /* Optional: Align card for scroll-snap */
-    scroll-snap-align: center;
-}
+
 
 /* Media query for tablet and desktop screens */
 @media (min-width: 768px) {
     .pricing-card-container {
+        display: flex;
         flex-wrap: wrap; 
-        overflow-x: visible; 
+        overflow-x: auto; 
         justify-content: center; 
         padding-left: 20px; 
         padding-right: 20px; 

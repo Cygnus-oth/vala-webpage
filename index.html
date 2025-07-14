@@ -1341,7 +1341,6 @@ monthlyBtn.addEventListener('click', () => {
 }
 
 .rts-pricing-plan .single-plan__content .plan-icon {
-  margin-bottom: 40px;
   transition: all 0.3s ease;
 }
 .rts-pricing-plan .single-plan__content .plan-title {
@@ -3409,28 +3408,7 @@ monthlyBtn.addEventListener('click', () => {
   /* Custom styles for the pricing cards to match the images */
   /* Note: General body styles like background-color, font-family, etc., are assumed to be handled by your main page. */
 
-  .pricing-card-container {
-    max-width: 1250px;
-    width: 100%;
-    margin-left: auto;
-    /* Center the container */
-    margin-right: auto;
-    /* Center the container */
-    padding: 20px;
-    /* Add padding around the cards */
-    display: flex;
-    /* Use flexbox for horizontal layout */
-    flex-wrap: nowrap;
-    /* Prevent cards from wrapping to the next line initially */
-    overflow-x: auto;
-    /* Enable horizontal scrolling if cards overflow */
-    gap: 2rem;
-    /* Tailwind's gap-8 is 2rem */
-    justify-content: center;
-    /* Center the cards if there's extra space */
-    -webkit-overflow-scrolling: touch;
-    /* Smooth scrolling on iOS */
-  }
+
 
   /* Modified: Removed outer border/shadow for the plan-card directly */
   .plan-card {
@@ -3457,9 +3435,10 @@ monthlyBtn.addEventListener('click', () => {
 
     /* md breakpoint */
     .pricing-card-container {
+      display: flex;
       flex-wrap: wrap;
       /* Allow wrapping on medium screens */
-      overflow-x: visible;
+      overflow-x: auto;
       /* Disable horizontal scroll on medium+ screens */
     }
 
@@ -3806,7 +3785,7 @@ monthlyBtn.addEventListener('click', () => {
 @media (min-width: 768px) {
     .pricing-card-container {
         flex-wrap: wrap; 
-        overflow-x: visible; 
+        overflow-x: auto; 
         justify-content: center; 
         padding-left: 20px; 
         padding-right: 20px; 
@@ -4405,10 +4384,11 @@ monthlyBtn.addEventListener('click', () => {
 <!-- PRICING PLAN -->
 
 <style>
+
 /* --- Base Card Styling (Clean and simple to let the effect shine) --- */
 .single-plan {
     width: 380px; /* Using your specified dimensions */
-    height: 390px; /* Using your specified dimensions */
+    height: 400px; /* Using your specified dimensions */
     background-color: #f8f8f8; /* Light, clean background */
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
@@ -4422,7 +4402,12 @@ monthlyBtn.addEventListener('click', () => {
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.4s ease-out; /* Add filter transition */
 }
+        @media (width: 992px) {
+            .single-plan {
+              height: 110%
+            }
 
+        }
 /* Optional: Slight lift on hover for general interactivity */
 .single-plan:hover {
     transform: translateY(-5px);
@@ -4436,7 +4421,6 @@ box-shadow:  29px 29px 59px #bebebe,
 /* --- Content Styling (adjust colors for readability against your card background) --- */
 .single-plan .plan-icon i {
     font-size: 60px;
-    margin-bottom: px;
     color: #0848b3; /* Example color, match your brand */
 }
 
@@ -4453,21 +4437,7 @@ box-shadow:  29px 29px 59px #bebebe,
     color: #666; /* Slightly lighter text */
 }
 
-/* --- New styles for the blur effect --- */
-/* This class will be added to the parent container when any card is hovered */
-.tab__content.blur-active .single-plan {
-    filter: blur(4px); /* Apply blur to all cards when blur-active is present */
-}
-
-/* When a card is hovered within the blur-active state, remove its blur */
-.tab__content.blur-active .single-plan:hover {
-    filter: blur(0px); /* De-blur the hovered card */
-}
-
-/* Ensure the .active class on cards still works if you intend it to have a specific default style */
-.single-plan.active {
-
-}
+ 
 </style>
 
 
@@ -5253,7 +5223,7 @@ Chaque mois, nous vous envoyons un rapport pour vous tenir informé de l'avancem
                         <h4><span>Audit SEO Gratuit - Notre équipe SEO est prête à vous accompagner</span></h4>
                         <p>Des questions sur le SEO ? Besoin d’un audit ou d’un accompagnement sur le long terme ? Notre équipe est à votre écoute, contactez-nous !</p>
                         <div class="support-action d-inline-flex flex-wrap" style="    flex-direction: column;">
-                            <a style = "bac ; margin: 20px;" href="https://api.whatsapp.com/send/?phone=%2B212648143014&text&type=phone_number&app_absent=0" class=" mr-3"> <img src="https://static.whatsapp.net/rsrc.php/yZ/r/JvsnINJ2CZv.svg"></a>
+                            <a style = "margin: 20px;" href="https://api.whatsapp.com/send/?phone=%2B212648143014&text&type=phone_number&app_absent=0" class=" mr-3"> <img src="https://static.whatsapp.net/rsrc.php/yZ/r/JvsnINJ2CZv.svg"></a>
                             <a href="tel:+212528225522" class="mr-3"><span>0528225522</span></a>
                             <a href="tel:+212528213045" class="mr-3"><span>0528213045</span></a>
                         </div>
